@@ -1,6 +1,10 @@
 dist: xenial
 language: cpp
 compiler: clang
+addons:
+  apt:
+    packages:
+    - libboost_test_dev
 script:
 - cmake .
 - cmake --build .
