@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(homework_1 VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
 add_library(helloworld_lib lib.cpp)
 
-add_executable(helloworld main.cpp)
+add_executable(helloworld_cli main.cpp)
 
-target_link_libraries(helloworld helloworld_lib)
+target_link_libraries(helloworld_cli helloworld_lib)
 
-install(TARGETS helloworld RUNTIME DESTINATION bin)
+install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
